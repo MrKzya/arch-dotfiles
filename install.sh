@@ -9,7 +9,9 @@ echo "Установка Arch Linux + Niri"
 sudo -v
 #1
 echo -e "\n[1/7] Оболочка Niri, Kitty и тд"
-sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd git base-devel firefox fish starship ly
+sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd base-devel fish starship ly git
+# Я решил вынести приложения в отдельное
+sudo pacman -S --needed --noconfirm firefox fastfetch nano obsidian telegram-desktop code tree
 
 #2
 echo -e "\n[2/7] Ставим yay"
@@ -25,6 +27,8 @@ fi
 #3
 echo -e "\n[3/7] Качаем пакеты из yay"
 yay -S --needed --noconfirm dms-shell-niri dms-shell dgop dsearch-bin vicinae-bin nautilus
+# Сюда тоже приложения 
+yay -S --needed --noconfirm karing-bin tg-ws-proxy-bin
 #4
 echo -e "\n[4/7] Копируем конфиги"
 # Копируем всё из папки .config репозитория в системную ~/.config
