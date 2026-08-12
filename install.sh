@@ -24,7 +24,7 @@ else
 fi
 #3
 echo -e "\n[3/7] Качаем пакеты из yay"
-yay -S --needed --noconfirm noctalia-shell vicinae-bin nautilus
+yay -S --needed --noconfirm dms-shell-niri dms-shell dgop dsearch-bin vicinae-bin nautilus
 #4
 echo -e "\n[4/7] Копируем конфиги"
 # Копируем всё из папки .config репозитория в системную ~/.config
@@ -51,7 +51,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 #6
 echo -e "\n[6/7] Делаем нормальный lockscreen manedger ly и включаем vicinae"
 sudo systemctl set-default graphical.target
-sudo systemctl enable ly.service
+sudo systemctl enable ly@tty2.service
 systemctl --user enable --now vicinae || echo "vicinae включен (запустится при входе)"
 #7
 echo -e "\n[7/7] Ставим Fish по умолчанию"
