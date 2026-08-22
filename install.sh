@@ -33,8 +33,8 @@ yay -S --needed --noconfirm karing-bin tg-ws-proxy-bin
 echo -e "\n[4/7] Копируем конфиги"
 # Копируем всё из папки .config репозитория в системную ~/.config
 cp -r .config/* ~/.config/
-# Копируем настройки ly в системную папку (требует sudo)
-sudo cp -r etc/ly /etc/
+# Копируем настройки в системную папку (требует sudo)
+sudo cp -r etc/* /etc/
 echo "Конфиги есть, ура"
 #5
 echo -e "\n[5/7] Ставим нормальный MineGrub"
