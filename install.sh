@@ -9,7 +9,7 @@ echo "Установка Arch Linux + Niri"
 sudo -v
 #1
 echo -e "\n[1/7] Оболочка Niri, Kitty и тд"
-sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd base-devel fish starship ly git
+sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd base-devel fish starship ly git brightnessctl playerctl
 # Я решил вынести приложения в отдельное
 sudo pacman -S --needed --noconfirm firefox fastfetch nano obsidian telegram-desktop code tree
 
