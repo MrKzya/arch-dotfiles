@@ -9,7 +9,7 @@ echo "Установка Arch Linux + Niri"
 sudo -v
 #1
 echo -e "\n[1/7] Оболочка Niri, Kitty и тд"
-sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd base-devel fish starship ly git brightnessctl playerctl
+sudo pacman -S --needed --noconfirm niri kitty wayland polkit-gnome ttf-jetbrains-mono-nerd base-devel fish starship ly git brightnessctl playerctl os-prober ntfs-3g dosfstools
 # Я решил вынести приложения в отдельное
 sudo pacman -S --needed --noconfirm firefox fastfetch nano obsidian telegram-desktop code tree
 
@@ -48,8 +48,17 @@ sudo cp -r /tmp/minegrub-world-sel-theme/minegrub-world-selection /boot/grub/the
 # Очищаем временные файлы, пока пока
 rm -rf /tmp/minegrub-theme /tmp/minegrub-world-sel-theme
 
-# Прописываем тему world-selection в GRUB
-sudo sed -i 's|^GRUB_THEME=.*|GRUB_THEME="/boot/grub/themes/minegrub-world-selection/theme.txt"|' /etc/default/grub
+# Прописываем тему Minegrub (Главное меню) в GRUB
+sudo sed -i '/GRUB_THEME/d' /etc/default/grub
+echo 'GRUB_THEME="/boot/grub/themes/minegrub/theme.txt"' | sudo tee -a /etc/default/grub
+
+# Включаем графический режим
+sudo sed -i 's/.*GRUB_TERMINAL_OUTPUT.*/GRUB_TERMINAL_OUTPUT="gfxterm"/' /etc/default/grub
+
+# Включаем OS Prober для поиска Windows
+sudo sed -i '/GRUB_DISABLE_OS_PROBER/d' /etc/default/grub
+echo 'GRUB_DISABLE_OS_PROBER=false' | sudo tee -a /etc/default/grub
+
 # Генерируем новый загрузочный файл
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 #6
