@@ -1,12 +1,12 @@
-# CachyOS Niri Noctalia Settings
+# Arch Linux Niri and DankMaterialShell Settings
 
 **Niri** is a scrollable tiling Wayland compositor that emphasizes simplicity and fluid window management. It uses a continuous grid layout, optimized for both keyboard and touchpad navigation.
 
-This repository contains configuration files for Niri and related tools in CachyOS. These settings are designed to provide a balanced default setup while allowing easy customization. Noctalia Shell is used as the default shell, providing a user-friendly interface and seamless integration with Niri.
+These Niri settings are used with DankMaterialShell (DMS) on Arch Linux. The active configuration is `config.kdl`, which includes the files in `cfg/` and the existing color palette in `noctalia.kdl`. DMS and Vicinae start from `cfg/autostart.kdl`. The palette filename is historical; its colors are intentionally preserved.
 
 Useful links:
 
 - https://github.com/niri-wm/niri
-- https://github.com/noctalia-dev/noctalia-shell
+- https://duxlabs.dev/docs/dms/compositors
 
-Thank you for using CachyOS Niri Noctalia Settings.
+The DMS-generated files in `dms/` are left untouched; check the running DMS version before changing how they are included.

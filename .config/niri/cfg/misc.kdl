@@ -16,7 +16,7 @@
     }
 
     debug {
-        // Allows notification actions and window activation from Noctalia.
+        // Keep the existing activation behavior until it is tested with DMS on Arch.
         honor-xdg-activation-with-invalid-serial
     }
 
